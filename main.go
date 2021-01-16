@@ -9,12 +9,14 @@ import (
 )
 
 func main() {
+
+	fmt.Println("Welcome to guessTheLetter game...")
 	// get random number from "a" to "z"
 	num := getRandomInt(int('a'), int('z'))
 	found := false
 
 	for i := 0; i < 10; i++ {
-		fmt.Print(" Enter a alphabet character : ")
+		fmt.Print("Enter a alphabet character : ")
 		reader := bufio.NewReader(os.Stdin)
 		line, _, err := reader.ReadLine()
 		if err != nil {
