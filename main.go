@@ -13,8 +13,8 @@ func main() {
 	num := getRandomInt(int('a'), int('z'))
 	found := false
 
-	for i := 0; i < 5; i++ {
-		fmt.Print(string(rune(num)), i, " Enter a alphabet character : ")
+	for i := 0; i < 10; i++ {
+		fmt.Print(" Enter a alphabet character : ")
 		reader := bufio.NewReader(os.Stdin)
 		line, _, err := reader.ReadLine()
 		if err != nil {
@@ -24,7 +24,7 @@ func main() {
 		if len(line) == 1 {
 			if int(line[0]) >= int('a') && int(line[0]) <= int('z') {
 				if int(line[0]) == num {
-					fmt.Println("Yeah!!! You guessed that letter correctly.")
+					fmt.Println("Yeah!!! You are guessed that letter correctly in", i+1, "attempt.")
 					found = true // user already guessed the answer
 					break
 				} else if int(line[0]) > num {
